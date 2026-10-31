@@ -41,7 +41,7 @@ export function Header({
                 </h1>
               </div>
               <p className="text-xs text-slate-400">
-                Spravedlivá evidence najetých kilometrů pro kapelu (Jan vs. Tom)
+                Evidence najetých km pro kapelu (Jan vs. Tom)
               </p>
             </div>
           </div>
