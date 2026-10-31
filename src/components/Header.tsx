@@ -47,22 +47,16 @@ export function Header({
           </div>
 
           <div className="flex items-center gap-2 self-start sm:self-auto">
-            {/* Supabase status badge */}
-            <div
-              title={
-                isSupabaseLive
-                  ? 'Data se synchronizují s databází Supabase'
-                  : 'Běží v offline/lokálním režimu (doplňte .env.local pro Supabase)'
-              }
-              className={`flex items-center gap-1.5 text-[11px] px-2.5 py-1 rounded-lg border font-medium transition ${
-                isSupabaseLive
-                  ? 'bg-emerald-950/40 border-emerald-500/30 text-emerald-300'
-                  : 'bg-slate-800/80 border-slate-700 text-slate-400'
-              }`}
-            >
-              <Database size={13} className={isSupabaseLive ? 'text-emerald-400' : 'text-slate-400'} />
-              <span>{isSupabaseLive ? 'Supabase online' : 'Lokální data'}</span>
-            </div>
+            {/* Supabase status badge pouze pokud je online */}
+            {isSupabaseLive && (
+              <div
+                title="Data se synchronizují s cloudovou databází Supabase"
+                className="flex items-center gap-1.5 text-[11px] px-2.5 py-1 rounded-lg border font-medium bg-emerald-950/40 border-emerald-500/30 text-emerald-300 transition"
+              >
+                <Database size={13} className="text-emerald-400" />
+                <span>Supabase online</span>
+              </div>
+            )}
 
             {/* PIN Security toggle */}
             {isUnlocked ? (

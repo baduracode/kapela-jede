@@ -54,7 +54,6 @@ export async function calculateDistanceMapyCz(
           durationMinutes: Math.round(dist * 0.9),
           originLabel: origin,
           destinationLabel: destination,
-          error: 'Orientační výpočet (vložte MAPY_CZ_API_KEY do .env.local pro přesné Mapy.cz REST API)',
         };
       }
     }
@@ -66,7 +65,6 @@ export async function calculateDistanceMapyCz(
       durationMinutes: 40,
       originLabel: origin,
       destinationLabel: destination,
-      error: 'Orientační odhad (pro přesnou trasu doplňte MAPY_CZ_API_KEY v .env.local)',
     };
   }
 

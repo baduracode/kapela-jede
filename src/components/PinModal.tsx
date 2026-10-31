@@ -138,10 +138,6 @@ export function PinModal({
               <span>{error}</span>
             </div>
           )}
-
-          <div className="text-[11px] text-slate-500 bg-slate-800/50 px-3 py-1.5 rounded-md border border-slate-800">
-            Výchozí PIN je <span className="font-mono text-amber-300 font-semibold">1234</span> (nastavitelný v .env.local)
-          </div>
         </div>
       </div>
     </div>

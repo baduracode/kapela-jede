@@ -158,38 +158,6 @@ export default function HomePage() {
 
       {/* Hlavní obsah */}
       <main className="flex-1 max-w-5xl w-full mx-auto px-4 py-6 sm:py-8">
-        {/* Banner pokud Supabase ještě není nakonfigurovaná */}
-        {!isSupabaseLive && (
-          <div className="mb-6 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-lg">
-            <div className="flex items-start gap-2.5">
-              <Info size={18} className="text-amber-400 flex-shrink-0 mt-0.5" />
-              <div>
-                <strong className="text-white block font-semibold mb-0.5">
-                  Aplikace běží v lokálním testovacím režimu
-                </strong>
-                <span>
-                  Pro propojení se skutečnou databází Supabase doplňte proměnné v{' '}
-                  <code className="bg-amber-950/60 px-1.5 py-0.5 rounded text-amber-300 font-mono">
-                    .env.local
-                  </code>{' '}
-                  a spusťte SQL skript{' '}
-                  <code className="bg-amber-950/60 px-1.5 py-0.5 rounded text-amber-300 font-mono">
-                    schema.sql
-                  </code>{' '}
-                  v Supabase SQL Editoru. Zápis a výpočty fungují ihned i v tomto režimu!
-                </span>
-              </div>
-            </div>
-            <button
-              onClick={() => loadTrips()}
-              className="px-3 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-300 font-semibold text-xs transition flex items-center gap-1.5 whitespace-nowrap self-end sm:self-auto"
-            >
-              <RefreshCw size={13} />
-              <span>Obnovit</span>
-            </button>
-          </div>
-        )}
-
         {/* Indikátor načítání */}
         {isLoading && trips.length === 0 ? (
           <div className="py-20 flex flex-col items-center justify-center gap-3 text-slate-400">
